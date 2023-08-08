@@ -8,16 +8,27 @@
 // This is useful for granularity you might need beyond just the environment.
 // Note that as usual, any environment variables you expose through it will end up in your
 // bundle, and you should not use it for any sensitive information like passwords or keys.
-import { env } from './.env';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-export const environment = {
-  production: false,
-  version: env['npm_package_version'] + '-dev',
-  serverUrl: '/api',
-  defaultLanguage: 'es-ES',
-  supportedLanguages: ['es-ES'],
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC_7_R4Z-62rpa22e1R8vUGOLwrFc25vug",
+  authDomain: "pruebamd-673b4.firebaseapp.com",
+  projectId: "pruebamd-673b4",
+  storageBucket: "pruebamd-673b4.appspot.com",
+  messagingSenderId: "345831367369",
+  appId: "1:345831367369:web:62ccc0989dfe5595056318",
+  measurementId: "G-END11C0VPY"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
