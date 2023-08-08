@@ -9,13 +9,12 @@ import { UntilDestroy, untilDestroyed } from '@shared';
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss']
+  styleUrls: ['./shell.component.scss'],
 })
 export class ShellComponent implements OnInit {
-
   @ViewChild('sidenav', { static: false }) sidenav!: MatSidenav;
 
-  constructor(private breakpoint: BreakpointObserver) { }
+  constructor(private breakpoint: BreakpointObserver) {}
 
   ngOnInit() {
     // Automatically close side menu on screens > small breakpoint
@@ -27,5 +26,4 @@ export class ShellComponent implements OnInit {
       )
       .subscribe(() => this.sidenav.close());
   }
-
 }
